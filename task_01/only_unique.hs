@@ -13,7 +13,7 @@ removeElem (x:xs) el
 getElemsUnique:: (Eq) a => [a] -> [a]
 getElemsUnique [] = []
 getElemsUnique (x:xs)
-    | elemExist xs x = getElemsUnique (removeElem xs x)
+    | elemExist xs x = getElemsUnique $ removeElem xs x
     | otherwise = x : getElemsUnique xs
 
 
