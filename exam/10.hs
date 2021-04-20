@@ -2,12 +2,18 @@ import System.Environment
 import System.IO
 import Data.List.Split
 import Data.Typeable(typeOf)
+import Data.ByteString.Lazy as BS
+import Data.Word
+import Data.Bits
+import Data.Typeable(typeOf)
 
+customRead :: String -> IO [Word8]
 customRead path = do
-    contents <- readFile path
-    return (map (read::String->Int) (words contents))
+    contents <- BS.readFile path
+    print (unpack contents)
+    return $ unpack contents
 
-merge:: [Int] -> [Int] -> [Int]
+merge:: [Word8] -> [Word8] -> [Word8]
 merge [] ys = ys
 merge xs [] = xs
 merge (x:xs) (y:ys) 
