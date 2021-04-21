@@ -34,4 +34,4 @@ main = do
 ```
 
 Пример работы:
-![5.hs](./img/5.png)
+![5.hs](https://github.com/Nastormo/MSU_Haskell2021/blob/master/exam/imgs/5.png)
